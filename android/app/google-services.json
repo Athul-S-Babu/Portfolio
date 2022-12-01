@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "591500431863",
+    "project_id": "athulsb-41ac1",
+    "storage_bucket": "athulsb-41ac1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:591500431863:android:902d956224b2c79c8c1ef2",
+        "android_client_info": {
+          "package_name": "athulsbabu.com.athul_s_babu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "591500431863-jtvmrtld9e8hrjsqui1t9n2723n35hmv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbsKwuzbMx1I4R64kWVrfe-hcb4Tk1WEs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "591500431863-jtvmrtld9e8hrjsqui1t9n2723n35hmv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "591500431863-fd87u15asphjmc8n8jl0k1e50httbovj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "athulsbabu.com.athulSBabu"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
