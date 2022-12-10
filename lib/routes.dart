@@ -1,4 +1,4 @@
-import 'dart:js';
+//import 'dart:js';
 
 import 'package:athul_s_babu/mobile/about_mobile.dart';
 import 'package:athul_s_babu/mobile/blog_mobile.dart';

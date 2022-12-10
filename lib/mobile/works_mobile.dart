@@ -52,12 +52,12 @@ class _WorksMobileState extends State<WorksMobile> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      launchUrl(
-                          "images/insta.svg", "http://www.instagram.com/athul_sb"),
-                      launchUrl(
-                          "images/twitter.svg", "http://www.twitter.com/elonmusk"),
-                      launchUrl(
-                          "images/github.svg", "http://www.github.com/Athul-S-Babu"),
+                      launchUrl("images/insta.svg",
+                          "http://www.instagram.com/athul_sb"),
+                      launchUrl("images/twitter.svg",
+                          "http://www.twitter.com/elonmusk"),
+                      launchUrl("images/github.svg",
+                          "http://www.github.com/Athul-S-Babu"),
                     ],
                   )
                 ],

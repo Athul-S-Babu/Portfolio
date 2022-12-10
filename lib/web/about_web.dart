@@ -1,4 +1,4 @@
-import 'dart:html';
+//import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -62,8 +62,8 @@ class _AboutWebState extends State<AboutWeb> {
                       "images/insta.svg", "http://www.instagram.com/athul_sb"),
                   launchUrl(
                       "images/twitter.svg", "http://www.twitter.com/elonmusk"),
-                  launchUrl(
-                      "images/github.svg", "http://www.github.com/Athul-S-Babu"),
+                  launchUrl("images/github.svg",
+                      "http://www.github.com/Athul-S-Babu"),
                 ],
               )
             ],

@@ -52,8 +52,8 @@ class _WorksWebState extends State<WorksWeb> {
                       "images/insta.svg", "http://www.instagram.com/athul_sb"),
                   launchUrl(
                       "images/twitter.svg", "http://www.twitter.com/elonmusk"),
-                  launchUrl(
-                      "images/github.svg", "http://www.github.com/Athul-S-Babu"),
+                  launchUrl("images/github.svg",
+                      "http://www.github.com/Athul-S-Babu"),
                 ],
               )
             ],

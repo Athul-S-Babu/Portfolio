@@ -2,12 +2,14 @@ import 'package:athul_s_babu/mobile/landing_page_mobile.dart';
 import 'package:athul_s_babu/web/landing_page_web.dart';
 import 'package:athul_s_babu/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:url_strategy/url_strategy.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  setPathUrlStrategy();
   if (kIsWeb) {
     await Firebase.initializeApp(
         options: FirebaseOptions(
@@ -19,10 +21,10 @@ void main() async {
             appId: "1:591500431863:web:6008b0422b3e8cd28c1ef2",
             measurementId: "G-TS7Q213J0C"));
   } else {
-    await Firebase.initializeApp;
+    GoogleFonts.config.allowRuntimeFetching=false;
+    await Firebase.initializeApp();
   }
 
-  setPathUrlStrategy();
   runApp(const MyApp());
 }
 

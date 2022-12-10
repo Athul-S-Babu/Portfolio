@@ -1,6 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:logger/logger.dart';
 
 class TabsWeb extends StatefulWidget {
   final title;
@@ -132,11 +134,13 @@ class AbelCustom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(text,style: GoogleFonts.abel(
-      fontSize: size,
-      color: color==null?Colors.black:color,
-      fontWeight:fontWeight==null?FontWeight.normal:fontWeight,
-    ),
+    return Text(
+      text,
+      style: GoogleFonts.abel(
+        fontSize: size,
+        color: color == null ? Colors.black : color,
+        fontWeight: fontWeight == null ? FontWeight.normal : fontWeight,
+      ),
     );
   }
 }
@@ -146,6 +150,8 @@ class TextForms extends StatelessWidget {
   final ContainerWidth;
   final hintText;
   final maxLine;
+  final controller;
+  final validator;
 
   const TextForms({
     Key? key,
@@ -153,6 +159,8 @@ class TextForms extends StatelessWidget {
     @required this.ContainerWidth,
     @required this.hintText,
     this.maxLine,
+    this.controller,
+    this.validator,
   }) : super(key: key);
 
   @override
@@ -165,8 +173,13 @@ class TextForms extends StatelessWidget {
         SizedBox(
             width: ContainerWidth,
             child: TextFormField(
+              controller: controller,
+              validator: validator,
               maxLines: maxLine == null ? null : maxLine,
               decoration: InputDecoration(
+                errorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.red),
+                    borderRadius: BorderRadius.all(Radius.circular(10.0))),
                 enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.teal),
                     borderRadius: BorderRadius.all(Radius.circular(10.0))),
@@ -252,4 +265,39 @@ class _AnimatedCardState extends State<AnimatedCard>
       ),
     );
   }
+}
+
+class AddDataFirestore {
+  var logger = Logger();
+  CollectionReference response =
+      FirebaseFirestore.instance.collection("Messages");
+
+  Future addResponse(final firstName, final lastName, final email,
+      final phoneNumber, final messages) async {
+    return response
+        .add({
+          'first name': firstName,
+          'last name': lastName,
+          'email': email,
+          'phone number': phoneNumber,
+        })
+        .then((value) {
+          return true;
+    })
+        .catchError((error) {
+          logger.d("Success");
+          return false;
+    }
+        );
+  }
+}
+
+Future DialogError(BuildContext context,String title) {
+  return showDialog(
+      context: context,
+      builder: (BuildContext context) => AlertDialog(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0)),
+            title: SansBold(title, 20.0),
+          ));
 }
